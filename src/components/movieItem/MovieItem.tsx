@@ -1,23 +1,20 @@
 import './movieItem.css'
-import { Link } from 'react-router-dom';
+import {Movie} from "../../store";
 
 interface MovieItemProps {
-    imdbid: string;
-    title: string;
-    poster: string;
-    isLoggedIn: boolean;
+    movie: Movie;
 }
 
-function MovieItem ({ imdbid, title, poster, isLoggedIn }: MovieItemProps) {
+function MovieItem ({ movie }: MovieItemProps) {
     return (
-        <div className="movie">
-            <img src={poster} alt={title} />
-            <h2>{title}</h2>
-            {isLoggedIn ? (
-                <Link to={`/movies/${imdbid}`}>View Details</Link>
-            ) : (
-                <p>Login to view details</p>
-            )}
+        <div className="movie-item">
+            <h2>{movie.title}</h2>
+            <img src={movie.poster} alt={movie.title} />
+            <p>IMDB ID: {movie.imdbid}</p>
+            <a href={movie.trailer_link} target="_blank" rel="noopener noreferrer">
+                Watch Trailer
+            </a>
+            <p>Favorite: {movie.is_favorite ? "Yes" : "No"}</p>
         </div>
     );
 }
