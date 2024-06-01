@@ -1,6 +1,9 @@
-// MoviePage.tsx
 import { useParams } from 'react-router-dom';
 import {Movie} from "../../models/model.ts";
+
+import "./moviePage.css"
+
+
 
 interface MoviePageProps {
     movies: Movie[];

@@ -1,6 +1,8 @@
 import {Movie} from "../models/model.ts";
 import MovieItem from "../components/movieItem/MovieItem.tsx";
 
+import "./homePage.css"
+
 interface HomePageProps {
     movies: Movie[];
 }

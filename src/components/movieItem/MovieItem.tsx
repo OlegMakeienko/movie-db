@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import {Movie} from "../../models/model.ts";
 
+import "./movieItem.css"
+
 interface MovieItemProps {
     movie: Movie;
 }
