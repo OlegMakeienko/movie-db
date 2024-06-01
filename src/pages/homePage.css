@@ -1,0 +1,18 @@
+.home-page {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

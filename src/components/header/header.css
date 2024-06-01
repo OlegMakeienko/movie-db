@@ -1,12 +1,17 @@
 .header-page {
-    background-color: -moz-mac-accentregularhighlight;
-    padding: 1rem;
+    background-color: #007bff;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
-    color: white;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .header ul {
@@ -14,7 +19,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .header ul li {
@@ -24,4 +29,33 @@
 .header ul li a {
     color: white;
     text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.header ul li a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header ul li {
+        display: block;
+    }
+
+    .header ul li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
 }
