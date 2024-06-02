@@ -1,3 +1,4 @@
+// store.ts
 import create from 'zustand';
 
 export interface Movie {
