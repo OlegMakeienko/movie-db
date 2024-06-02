@@ -1,16 +1,10 @@
 import { useParams } from 'react-router-dom';
-import {Movie} from "../../models/model.ts";
-
 import "./moviePage.css"
+import {useStore} from "../../store/store.ts";
 
-
-
-interface MoviePageProps {
-    movies: Movie[];
-}
-
-const MoviePage: React.FC<MoviePageProps> = ({ movies }) => {
+function MoviePage() {
     const { imdbid } = useParams<{ imdbid: string }>();
+    const { movies } = useStore();
     const movie = movies.find(movie => movie.imdbid === imdbid);
 
     if (!movie) {

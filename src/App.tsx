@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
-import {Movie} from "./models/model.ts";
 import HomePage from "./pages/HomePage.tsx";
 import MoviePage from "./pages/movie/MoviePage.tsx";
+import { useStore } from './store/store.ts';
 
 function App() {
-    const [apiKey, setApiKey] = useState<string | null>(null);
-    const [movies, setMovies] = useState<Movie[]>([]);
+    const { movies, setMovies, apiKey, setApiKey } = useStore();
+
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/keys')
@@ -19,7 +19,7 @@ function App() {
             .catch(error => {
                 console.error('Error fetching API key:', error);
             });
-    }, []);
+    }, [setApiKey]);
 
     useEffect(() => {
         if (apiKey) {
@@ -32,7 +32,7 @@ function App() {
                     console.error('Error fetching movies:', error);
                 });
         }
-    }, [apiKey]);
+    }, [apiKey, setMovies]);
 
     return (
         <div className="app">

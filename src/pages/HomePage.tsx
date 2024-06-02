@@ -1,13 +1,12 @@
-import {Movie} from "../models/model.ts";
 import MovieItem from "../components/movieItem/MovieItem.tsx";
 
 import "./homePage.css"
+import {useStore} from "../store/store.ts";
 
-interface HomePageProps {
-    movies: Movie[];
-}
 
-function HomePage ({ movies } : HomePageProps) {
+function HomePage () {
+    const { movies } = useStore();
+
     return (
         <div className="home-page">
             <h1>Movie List</h1>
