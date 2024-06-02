@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import {Movie} from "../../models/model.ts";
+import goldStar from "../../assets/gold-star.svg";
+import grayStar from "../../assets/gray-star.svg";
 
 import "./movieItem.css"
 
@@ -18,7 +20,12 @@ function MovieItem ({ movie } : MovieItemProps) {
             <a href={movie.trailer_link} target="_blank" rel="noopener noreferrer">
                 Watch Trailer
             </a>
-            <p>Favorite: {movie.is_favorite ? "Yes" : "No"}</p>
+            <div className="icon">
+                <img
+                    src={movie.is_favorite ? goldStar : grayStar}
+                    alt="Favorite Icon"
+                />
+            </div>
         </div>
     );
 }

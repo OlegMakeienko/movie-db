@@ -15,8 +15,6 @@
 }
 
 .movie-item img {
-    width: 100%;
-    height: auto;
     border-radius: 10px;
     margin: 15px 0;
 }
@@ -34,3 +32,4 @@
 .movie-item a:hover {
     text-decoration: underline;
 }
+

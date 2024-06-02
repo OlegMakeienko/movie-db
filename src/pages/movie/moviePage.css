@@ -59,3 +59,17 @@
         font-size: 1.2em;
     }
 }
+
+.movie-page img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.favorite-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
