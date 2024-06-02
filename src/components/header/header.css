@@ -59,3 +59,15 @@
         width: 100%;
     }
 }
+
+.button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
