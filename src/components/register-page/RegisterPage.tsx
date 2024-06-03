@@ -10,7 +10,7 @@ function RegisterPage() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    const handleRegister = async (e) => {
+    const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8080/api/auth/register', {

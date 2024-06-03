@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useStore } from "../../store/store.ts";
 
 import "./loginPage.css"
 
@@ -9,8 +10,9 @@ function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const { setIsLoggedIn, setUser } = useStore();
 
-    const handleLogin = async (e) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8080/api/auth/login', {
@@ -18,8 +20,10 @@ function LoginPage() {
                 password
             });
             console.log('Login successful:', response.data);
+            setIsLoggedIn(true); // Update isLoggedIn state
+            setUser({ username, password }); // Update user state
             navigate('/');
-        } catch (error : never) {
+        } catch (error : any) {
             console.error('Login error:', error);
             setError(error.response ? error.response.data.message : 'Login failed');
         }
