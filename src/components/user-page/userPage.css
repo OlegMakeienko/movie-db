@@ -1,0 +1,43 @@
+.user-page {
+    padding: 20px;
+}
+
+.user-page h1, .user-page h2 {
+    text-align: center;
+}
+
+.user-page .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-page .movie-item {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user-page .movie-item img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.user-page button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-page button:hover {
+    background-color: #0056b3;
+}
