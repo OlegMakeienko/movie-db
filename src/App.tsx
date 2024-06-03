@@ -2,12 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import { useEffect } from 'react';
 import axios from 'axios';
-import HomePage from "./pages/HomePage.tsx";
-import MoviePage from "./pages/movie/MoviePage.tsx";
+import HomePage from "./components/home/HomePage.tsx";
+import MoviePage from "./components/movie/MoviePage.tsx";
 import { useStore } from './store/store.ts';
+import LoginPage from "./components/login/LoginPage.tsx";
+import RegisterPage from "./components/register/RegisterPage.tsx";
 
 function App() {
-    const { movies, setMovies, apiKey, setApiKey } = useStore();
+    const { setMovies, apiKey, setApiKey } = useStore();
 
 
     useEffect(() => {
@@ -38,8 +40,10 @@ function App() {
         <div className="app">
             <Header />
             <Routes>
-                <Route path="/" element={<HomePage movies={movies} />} />
-                <Route path="/movie/:imdbid" element={<MoviePage movies={movies} />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/movie/:imdbid" element={<MoviePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
             </Routes>
         </div>
     );
