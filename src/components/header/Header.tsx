@@ -10,8 +10,8 @@ function Header() {
                     <li><Link to="/" className="button">Home</Link></li>
                     <li><Link to="/login" className="button">Login</Link></li>
                     <li><Link to="/register" className="button">
-                        <img src={RegisterIcon} alt="Register Icon" />
-                        Register
+                        <img src={RegisterIcon} alt="RegisterPage Icon" />
+                        RegisterPage
                     </Link></li>
                 </ul>
             </nav>
