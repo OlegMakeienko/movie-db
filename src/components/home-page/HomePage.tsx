@@ -1,18 +1,27 @@
 import MovieItem from "../movieItem/MovieItem.tsx";
+import { useStore } from "../../store/store.ts";
+import { useNavigate } from 'react-router-dom';
 
 import "./homePage.css"
-import {useStore} from "../../store/store.ts";
-
 
 function HomePage () {
-    const { movies } = useStore();
+    const { movies, isLoggedIn } = useStore();
+    const navigate = useNavigate();
+
+    const handleMovieClick = (imdbid: string) => {
+        if (isLoggedIn) {
+            navigate(`/movie/${imdbid}`);
+        } else {
+            navigate('/login');
+        }
+    };
 
     return (
         <div className="home-page">
             <h1>Movie List</h1>
             <div className="movie-list">
                 {movies.map(movie => (
-                    <MovieItem key={movie.imdbid} movie={movie} />
+                    <MovieItem key={movie.imdbid} movie={movie} onClick={() => handleMovieClick(movie.imdbid)} />
                 ))}
             </div>
         </div>
