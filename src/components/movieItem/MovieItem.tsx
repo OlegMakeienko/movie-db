@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import {Movie} from "../../models/model.ts";
 import goldStar from "../../assets/gold-star.svg";
 import grayStar from "../../assets/gray-star.svg";
@@ -7,13 +6,14 @@ import "./movieItem.css"
 
 interface MovieItemProps {
     movie: Movie;
+    onClick: () => void;
 }
 
-function MovieItem ({ movie } : MovieItemProps) {
+function MovieItem ({ movie, onClick } : MovieItemProps) {
     return (
-        <div className="movie-item">
+        <div className="movie-item" onClick={onClick}>
             <h2>
-                <Link to={`/movie/${movie.imdbid}`}>{movie.title}</Link>
+                {movie.title}
             </h2>
             <img src={movie.poster} alt={movie.title} />
             <p>IMDB ID: {movie.imdbid}</p>
