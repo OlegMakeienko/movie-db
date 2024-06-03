@@ -1,7 +1,7 @@
-import MovieItem from "../components/movieItem/MovieItem.tsx";
+import MovieItem from "../movieItem/MovieItem.tsx";
 
 import "./homePage.css"
-import {useStore} from "../store/store.ts";
+import {useStore} from "../../store/store.ts";
 
 
 function HomePage () {
