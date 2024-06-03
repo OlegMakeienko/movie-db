@@ -2,21 +2,21 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import { useEffect } from 'react';
 import axios from 'axios';
-import HomePage from "./components/home/HomePage.tsx";
-import MoviePage from "./components/movie/MoviePage.tsx";
 import { useStore } from './store/store.ts';
-import LoginPage from "./components/login/LoginPage.tsx";
-import RegisterPage from "./components/register/RegisterPage.tsx";
+import HomePage from "./components/home-page/HomePage.tsx";
+import MoviePage from "./components/movie-page/MoviePage.tsx";
+import LoginPage from "./components/login-page/LoginPage.tsx";
+import RegisterPage from "./components/register-page/RegisterPage.tsx";
+import UserPage from "./components/user-page/UserPage.tsx";
 
 function App() {
     const { setMovies, apiKey, setApiKey } = useStore();
-
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/keys')
             .then(response => {
                 console.log('API Key Response:', response.data);
-                setApiKey(response.data.data); // Note the change here
+                setApiKey(response.data.data);
             })
             .catch(error => {
                 console.error('Error fetching API key:', error);
@@ -28,7 +28,7 @@ function App() {
             axios.get(`http://localhost:8080/api/movies?key=${apiKey}`)
                 .then(response => {
                     console.log('Movies Response:', response.data);
-                    setMovies(response.data.data); // Note the change here
+                    setMovies(response.data.data);
                 })
                 .catch(error => {
                     console.error('Error fetching movies:', error);
@@ -44,6 +44,7 @@ function App() {
                 <Route path="/movie/:imdbid" element={<MoviePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/profile" element={<UserPage />} />
             </Routes>
         </div>
     );
