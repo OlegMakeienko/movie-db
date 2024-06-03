@@ -1,4 +1,4 @@
-import MovieItem from "../movieItem/MovieItem.tsx";
+import MovieItem from "../../components/movieItem/MovieItem.tsx";
 import { useStore } from "../../store/store.ts";
 import { useNavigate } from 'react-router-dom';
 

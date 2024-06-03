@@ -3,11 +3,11 @@ import Header from './components/header/Header';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useStore } from './store/store.ts';
-import HomePage from "./components/home-page/HomePage.tsx";
-import MoviePage from "./components/movie-page/MoviePage.tsx";
-import LoginPage from "./components/login-page/LoginPage.tsx";
-import RegisterPage from "./components/register-page/RegisterPage.tsx";
-import UserPage from "./components/user-page/UserPage.tsx";
+import HomePage from "./pages/home-page/HomePage.tsx";
+import MoviePage from "./pages/movie-page/MoviePage.tsx";
+import LoginPage from "./pages/login-page/LoginPage.tsx";
+import RegisterPage from "./pages/register-page/RegisterPage.tsx";
+import UserPage from "./pages/user-page/UserPage.tsx";
 
 function App() {
     const { setMovies, apiKey, setApiKey } = useStore();
