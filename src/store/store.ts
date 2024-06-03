@@ -23,6 +23,8 @@ interface StoreState {
     setIsLoggedIn: (isLoggedIn: boolean) => void;
     setUser: (user: User | null) => void;
     toggleFavorite: (imdbid: string) => void;
+    addMovie: (movie: Movie) => void;
+    deleteMovie: (imdbid: string) => void;
 }
 
 export const useStore = create<StoreState>((set) => ({
@@ -38,5 +40,11 @@ export const useStore = create<StoreState>((set) => ({
         movies: state.movies.map(movie =>
             movie.imdbid === imdbid ? { ...movie, is_favorite: !movie.is_favorite } : movie
         )
+    })),
+    addMovie: (movie) => set((state) => ({
+        movies: [...state.movies, movie]
+    })),
+    deleteMovie: (imdbid) => set((state) => ({
+        movies: state.movies.filter(movie => movie.imdbid !== imdbid)
     }))
 }));

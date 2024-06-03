@@ -1,29 +1,36 @@
 .user-page {
-    padding: 20px;
+    padding: 40px;
+    background-color: #f9f9f9;
 }
 
 .user-page h1, .user-page h2 {
     text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .user-page .movie-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .user-page .movie-item {
-    margin: 10px;
-    padding: 10px;
+    width: 300px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .user-page .movie-item img {
-    max-width: 150px;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .user-page button {
@@ -40,4 +47,27 @@
 
 .user-page button:hover {
     background-color: #0056b3;
+}
+
+.user-page .add-movie-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-page .add-movie-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.user-page .add-movie-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
