@@ -48,3 +48,5 @@ export const useStore = create<StoreState>((set) => ({
         movies: state.movies.filter(movie => movie.imdbid !== imdbid)
     }))
 }));
+
+export default useStore;
