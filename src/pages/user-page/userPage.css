@@ -81,20 +81,44 @@
 
 .container {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
 }
 .label {
-    margin-right: 10px;
-    font-size: 18px;
+    margin-bottom: 5px;
+    font-size: 16px;
     font-weight: bold;
 }
+
 .input {
     padding: 5px;
-    font-size: 20px;
+    font-size: 18px;
+    width: 100%;
 }
 .movie-item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .user-page .movie-item {
+        max-width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .label {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .input {
+        padding: 8px;
+        font-size: 16px;
+    }
 }
 
 .movie-content {
