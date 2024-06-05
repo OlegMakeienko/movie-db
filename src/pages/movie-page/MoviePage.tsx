@@ -14,10 +14,7 @@ function MoviePage() {
     }
 
     const handleFavoriteClick = () => {
-        console.log("Favorite icon clicked");
-        console.log("Before toggle:", movie.is_favorite);
         toggleFavorite(movie.imdbid);
-        console.log("After toggle:", movie.is_favorite);
     };
 
 
@@ -26,9 +23,9 @@ function MoviePage() {
             <h1>{movie.title}</h1>
             <img src={movie.poster} alt={movie.title}/>
             <p>IMDB ID: {movie.imdbid}</p>
-            <a href={movie.trailer_link} target="_blank" rel="noopener noreferrer">
-                Watch Trailer
-            </a>
+            <div className='trailer-container'>
+                <iframe src={movie.trailer_link} title={movie.title} allowFullScreen/>
+            </div>
             <div className="favorite-icon" onClick={handleFavoriteClick}>
                 <img
                     src={movie.is_favorite ? goldStar : grayStar}
