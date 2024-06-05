@@ -3,7 +3,6 @@ import Header from './components/header/Header';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useStore } from './store/store.ts';
-import HomePage from "./pages/home-page/HomePage.tsx";
 import MoviePage from "./pages/movie-page/MoviePage.tsx";
 import LoginPage from "./pages/login-page/LoginPage.tsx";
 import RegisterPage from "./pages/register-page/RegisterPage.tsx";
@@ -40,11 +39,10 @@ function App() {
         <div className="app">
             <Header />
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<UserPage />} />
                 <Route path="/movie/:imdbid" element={<MoviePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-                <Route path="/profile" element={<UserPage />} />
             </Routes>
         </div>
     );
